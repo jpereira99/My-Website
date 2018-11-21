@@ -25,5 +25,4 @@ def dashboardMedium(medium):
 
 
 #run website
-if __name__ == "__main__":
-    app.run(host='18.223.121.168', debug=False)
+app.run(host='0.0.0.0', port='443')
