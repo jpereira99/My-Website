@@ -26,4 +26,4 @@ def dashboardMedium(medium):
 
 #run website
 if __name__ == "__main__":
-    app.run(app.run(host='0.0.0.0')
+    app.run(host='18.223.121.168', debug=False)
