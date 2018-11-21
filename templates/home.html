@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - Jayden Pereira</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/uikit.min.css') }}" />
+    <script src="{{ url_for('static', filename='js/uikit.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/uikit-icons.min.js') }}"></script>
+
+</head>
+<body>
+    <!-- NAVBAR -->
+     <nav class="uk-navbar-container" uk-navbar>
+            <div class="uk-navbar-center">
+                <div class="uk-navbar-nav">
+                    <div class="uk-navbar-center-left uk-navbar-nav">
+                        <li><a href="/dashboard/">Portfolio</a></li>
+                    </div>
+
+                    <a href="/" class="uk-navbar-item uk-logo">
+                        <img data-src="{{ url_for('static', filename='images/Logo.png') }}" width="70" height="" alt="" uk-img>
+                    </a>
+
+                    <div class="uk-navbar-center-right uk-navbar-nav">
+                        <li><a href="/about/">About</a></li>
+                    </div>
+                </div>
+            </div>
+     </nav>
+
+    <!-- BODY -->
+
+    <!-- paralax -->
+    <div class="uk-height-large uk-background-cover uk-light uk-flex" uk-parallax="bgy: -60" style="background-image: url({{ url_for('static', filename='images/back.jpg') }});">
+        <h1 class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical"><b>engineering creativity.</b></h1>
+    </div>
+
+
+    <!-- design cards -->
+    <div class="uk-child-width-1-3@s uk-padding" uk-grid>
+        <div>
+            <div data-src="{{ url_for('static', filename='images/codecap.png') }}" width="" height="" alt="" uk-img class="uk-height-large uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-inline">
+                <!-- <img uk-parallax="opacity: 0,1; viewport: 0.5" data-src="{{ url_for('static', filename='images/blackback.png') }}" width="" height="" alt="" uk-img></img> -->
+                <div class="uk-overlay-primary uk-position-cover" uk-parallax="opacity: 0,1; viewport: 0.7"></div>
+                <h1 uk-parallax="opacity: 0,1; y: 50,0; viewport: 0.7">software</h1>
+            </div>
+        </div>
+        <div>
+            <div data-src="{{ url_for('static', filename='images/graphiccap.png') }}" width="" height="" alt="" uk-img class="uk-height-large uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-inline">
+                <div class="uk-overlay-primary uk-position-cover" uk-parallax="opacity: 0,1; viewport: 0.7"></div>
+                <h1 uk-parallax="opacity: 0,1; y: 50,0; viewport: 0.7">graphics</h1>
+            </div>
+        </div>
+        <div>
+            <div data-src="{{ url_for('static', filename='images/photomain.png') }}" width="" height="" alt="" uk-img class="uk-height-large uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-inline">
+                <div class="uk-overlay-primary uk-position-cover" uk-parallax="opacity: 0,1; viewport: 0.7"></div>
+                <h1 uk-parallax="opacity: 0,1; y: 50,0; viewport: 0.7">photography</h1>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- contact card -->
+    <div class="uk-card uk-card-secondary uk-card-body uk-width-expand uk-text-center">
+        <h3 class="uk-card-title"><b>Jayden Pereira</b></h3>
+        <p>
+            <a class="uk-padding-small" href="mailto:jpereir2@stevens.edu" uk-icon="mail"></a>
+            <a class="uk-padding-small" href="https://github.com/jpereira99" uk-icon="github"></a>
+            <a class="uk-padding-small" href="https://www.linkedin.com/in/jaydenpereira99/" uk-icon="linkedin"></a>
+        </p>
+    </div>
+
+
+
+
+</body>
+</html>
