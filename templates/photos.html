@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - Jayden Pereira</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/uikit.min.css') }}" />
+    <script src="{{ url_for('static', filename='js/uikit.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/uikit-icons.min.js') }}"></script>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="uk-navbar-container" uk-navbar>
+                <div class="uk-navbar-center">
+                    <div class="uk-navbar-nav">
+
+                        <a href="/" class="uk-navbar-item uk-logo">
+                            <img data-src="{{ url_for('static', filename='images/Logo.png') }}" width="70" height="" alt="" uk-img>
+                        </a>
+
+                    </div>
+                </div>
+         </nav>
+
+    <!-- BODY -->
+    <div id="Header">
+        <h1 align="center" class="uk-heading-primary uk-padding uk-padding-remove-bottom"><b>Photography</b></h1>
+    </div>
+
+    <div id="Cards">
+        <div id="Row1" class="uk-child-width-1-3 uk-grid-medium uk-grid-match" uk-grid>
+
+            <div class="uk-card uk-card-hover uk-card-hover uk-padding">
+                <div class="uk-card-media-top">
+                    <img src="{{ url_for('static', filename='images/photomain.png') }}" alt="">
+                </div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title">Media Top</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                </div>
+            </div>
+
+            <div class="uk-card uk-card-hover uk-card-hover uk-padding">
+                <div class="uk-card-media-top">
+                    <img src="{{ url_for('static', filename='images/photomain.png') }}" alt="">
+                </div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title">Media Top</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                </div>
+            </div>
+
+            <div class="uk-card uk-card-hover uk-card-hover uk-padding">
+                <div class="uk-card-media-top">
+                    <img src="{{ url_for('static', filename='images/photomain.png') }}" alt="">
+                </div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title">Media Top</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="Row2" class="uk-child-width-1-3@s uk-grid-small uk-grid-match" uk-grid>
+
+            <div class="uk-card uk-card-hover uk-card-hover uk-padding">
+                <div class="uk-card-media-top">
+                    <img src="{{ url_for('static', filename='images/photomain.png') }}" alt="">
+                </div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title">Media Top</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                </div>
+            </div>
+
+            <div class="uk-card uk-card-hover uk-card-hover uk-padding">
+                <div class="uk-card-media-top">
+                    <img src="{{ url_for('static', filename='images/photomain.png') }}" alt="">
+                </div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title">Media Top</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                </div>
+            </div>
+
+            <div class="uk-card uk-card-hover uk-card-hover uk-padding">
+                <div class="uk-card-media-top">
+                    <img src="{{ url_for('static', filename='images/photomain.png') }}" alt="">
+                </div>
+                <div class="uk-card-body">
+                    <h3 class="uk-card-title">Media Top</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="Return" align="center" class="uk-padding"><a class="uk-button uk-button-secondary uk-button-large" href="/dashboard/">experience a different medium</a></div>
+
+    <!-- contact card -->
+    <div class="uk-card uk-card-secondary uk-card-body uk-width-expand uk-text-center">
+        <h3 class="uk-card-title"><b>Jayden Pereira</b></h3>
+        <p>
+            <a class="uk-padding-small" href="mailto:jpereir2@stevens.edu" uk-icon="mail"></a>
+            <a class="uk-padding-small" href="https://github.com/jpereira99" uk-icon="github"></a>
+            <a class="uk-padding-small" href="https://www.linkedin.com/in/jaydenpereira99/" uk-icon="linkedin"></a>
+        </p>
+    </div>
+
+
+</body>
+</html>

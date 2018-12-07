@@ -12,13 +12,64 @@
 </head>
 <body>
 
-    <div align="center" class="uk-padding">
-        <h1 class="uk-heading-hero">Brilliance takes time.</h1>
-        <h2 class="uk-text-muted">this part of my site is under construction.</h2>
-            <div align="center" class="uk-card uk-card-body uk-width-5-6@s uk-align-center">
-                <a class="uk-button uk-button-default uk-button-large uk-text-center" href="/">Click here to return to the main page.</a>
-            </div>
+    <!-- NAVBAR -->
+    <nav class="uk-navbar-container" uk-navbar>
+                <div class="uk-navbar-center">
+                    <div class="uk-navbar-nav">
+
+                        <a href="/" class="uk-navbar-item uk-logo">
+                            <img data-src="{{ url_for('static', filename='images/Logo.png') }}" width="70" height="" alt="" uk-img>
+                        </a>
+
+                    </div>
+                </div>
+         </nav>
+
+    <!-- BODY -->
+    <div id="Header">
+        <h1 align="center" class="uk-heading-primary uk-padding"><b>Enter the Archives</b></h1>
     </div>
+
+    <div id="selections" class="uk-child-width-1-3@m uk-grid-small uk-grid-match uk-padding uk-padding-remove-top" uk-grid>
+        <div id="software" class="uk-card uk-card-hover uk-card-body">
+            <div id="upperS" align="center" class="uk-padding">
+                <h1>Software</h1>
+                <a class="uk-button uk-button-secondary uk-button-large" href="/dashboard/software">explore my code</a>
+            </div>
+            <div id="lowerS" class="uk-padding">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper ante ut congue varius. Nullam sollicitudin urna id elit scelerisque blandit. Phasellus in justo ipsum. Nulla a nisi ut felis pellentesque viverra consequat ac erat. Ut rhoncus dapibus magna, ut posuere purus facilisis ultricies. Curabitur urna velit, elementum nec tincidunt et, condimentum id turpis. Cras finibus vehicula arcu, vel imperdiet nulla pellentesque vel. Nunc sapien arcu, fermentum in felis vitae, tempor faucibus ipsum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean ultricies sed nisl at mattis. Aliquam interdum accumsan ante, quis aliquet lectus aliquam hendrerit. Nunc vel nibh nec elit dapibus suscipit vel et justo. Suspendisse sed justo et urna pellentesque volutpat. Nam sed porttitor magna.</p>
+            </div>
+        </div>
+        <div id="graphics" class="uk-card uk-card-hover uk-card-body">
+            <div id="upperG" align="center" class="uk-padding">
+                <h1>Graphics</h1>
+                <a class="uk-button uk-button-secondary uk-button-large" href="/dashboard/graphics">explore my designs</a>
+            </div>
+            <div id="lowerG" class="uk-padding">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper ante ut congue varius. Nullam sollicitudin urna id elit scelerisque blandit. Phasellus in justo ipsum. Nulla a nisi ut felis pellentesque viverra consequat ac erat. Ut rhoncus dapibus magna, ut posuere purus facilisis ultricies. Curabitur urna velit, elementum nec tincidunt et, condimentum id turpis. Cras finibus vehicula arcu, vel imperdiet nulla pellentesque vel. Nunc sapien arcu, fermentum in felis vitae, tempor faucibus ipsum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean ultricies sed nisl at mattis. Aliquam interdum accumsan ante, quis aliquet lectus aliquam hendrerit. Nunc vel nibh nec elit dapibus suscipit vel et justo. Suspendisse sed justo et urna pellentesque volutpat. Nam sed porttitor magna.</p>
+            </div>
+        </div>
+        <div id="photos" class="uk-card uk-card-hover uk-card-body">
+            <div id="upperP" align="center" class="uk-padding">
+                <h1>Photography</h1>
+                <a class="uk-button uk-button-secondary uk-button-large" href="/dashboard/photos">explore my shots</a>
+            </div>
+            <div id="lowerP" class="uk-padding">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper ante ut congue varius. Nullam sollicitudin urna id elit scelerisque blandit. Phasellus in justo ipsum. Nulla a nisi ut felis pellentesque viverra consequat ac erat. Ut rhoncus dapibus magna, ut posuere purus facilisis ultricies. Curabitur urna velit, elementum nec tincidunt et, condimentum id turpis. Cras finibus vehicula arcu, vel imperdiet nulla pellentesque vel. Nunc sapien arcu, fermentum in felis vitae, tempor faucibus ipsum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean ultricies sed nisl at mattis. Aliquam interdum accumsan ante, quis aliquet lectus aliquam hendrerit. Nunc vel nibh nec elit dapibus suscipit vel et justo. Suspendisse sed justo et urna pellentesque volutpat. Nam sed porttitor magna.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- contact card -->
+    <div class="uk-card uk-card-secondary uk-card-body uk-width-expand uk-text-center">
+        <h3 class="uk-card-title"><b>Jayden Pereira</b></h3>
+        <p>
+            <a class="uk-padding-small" href="mailto:jpereir2@stevens.edu" uk-icon="mail"></a>
+            <a class="uk-padding-small" href="https://github.com/jpereira99" uk-icon="github"></a>
+            <a class="uk-padding-small" href="https://www.linkedin.com/in/jaydenpereira99/" uk-icon="linkedin"></a>
+        </p>
+    </div>
+
 
 </body>
 </html>
