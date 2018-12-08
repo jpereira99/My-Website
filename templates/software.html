@@ -107,7 +107,7 @@ function addElements () {
                 //Create Date Paragraph
                 var createDate = document.createElement("p");
                 createDate.setAttribute("class", "uk-text-muted");
-                var dateContent = document.createTextNode("Created: " + arrItems[i]['created_at']);
+                var dateContent = document.createTextNode("Created: " + arrItems[i]['updated_at']);
                 createDate.appendChild(dateContent);
                 var appender = document.getElementById(i+50);
                 appender.append(createDate);
