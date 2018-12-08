@@ -42,13 +42,13 @@ def webhook():
     req_data = request.get_json()
 
     name = req_data['repository']['name']
-    url = req_data['repository']['url']
+    url = req_data['repository']['html_url']
     desc = req_data['repository']['description']
-    created = req_data['repository']['created_at']
+    time = req_data['repository']['updated_at']
 
-    backend.jsonAppender(name, url, desc, created)
+    backend.jsonAppender(name, url, desc, time)
 
     return '''Successfully submitted into database'''
 
 #run website
-app.run(host="0.0.0.0", port='80')
+app.run(debug=True)

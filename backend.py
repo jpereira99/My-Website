@@ -15,7 +15,7 @@ def jsonAppender(repoName, html, description, timeCreated):
         "name" : repoName,
         "url" : html,
         "description" : description,
-        "created_at" : formattedTime
+        "updated_at" : formattedTime
     }]
 
     #Capturing old data
@@ -24,11 +24,19 @@ def jsonAppender(repoName, html, description, timeCreated):
 
     #Checking if data is already present for repo
     for n in oldData:
+        #remove old info and bump updated info to top
         if dataToAppend[0]['name'] == n['name']:
-            break
-        else:
-            #Appending to database
-            data = oldData + dataToAppend
+
+            filteredData = [d for d in oldData if d['name'] != n['name']]
+            newData = dataToAppend + filteredData
 
             with open("static/githubData.json", "w") as writeToFile:
-                json.dump(data, writeToFile)
+                json.dump(newData, writeToFile)
+
+            break
+        #add new repo to top
+        else:
+            newData = dataToAppend + oldData
+
+            with open("static/githubData.json", "w") as writeToFile:
+                json.dump(newData, writeToFile)
