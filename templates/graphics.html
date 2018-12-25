@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard - Jayden Pereira</title>
+    <title>Graphics - Jayden Pereira</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.ico') }}" type="image/x-icon">
@@ -55,7 +55,7 @@
         </div>
     </div>
 
-    <div id="Return" align="center" class="uk-padding"><a class="uk-button uk-button-secondary uk-button-large" href="/dashboard/">experience a different medium</a></div>
+    <div id="Return" align="center" class="uk-padding"><a class="uk-button uk-button-default uk-button-large" href="/dashboard/">experience a different medium</a></div>
 
     <!-- contact card -->
     <div class="uk-card uk-card-secondary uk-card-body uk-width-expand uk-text-center">
@@ -66,76 +66,5 @@
             <a class="uk-padding-small" href="https://www.linkedin.com/in/jaydenpereira99/" uk-icon="linkedin"></a>
         </p>
     </div>
-
-<script>
-//document.body.onload = addElements;
-
-function addElements () {
-
-    //Get json data from server
-    $.ajax({
-        dataType: "json",
-        url: "http://127.0.0.1:5000/static/graphicsData.json",
-        cache: false,  //do not cache
-        success: function(data){
-
-            var arrItems = [];
-            $.each(data, function (index, value) {
-                arrItems.push(value);
-            });
-
-            //loop for objects in array
-            for (var i = 0; i < arrItems.length ; i++) {
-
-                //Create Div
-                var newDiv = document.createElement("div");
-                newDiv.setAttribute("class", "uk-card uk-card-hover uk-flex uk-flex-center uk-flex-middle uk-inline uk-padding");
-                newDiv.setAttribute("align", "center");
-                newDiv.id = i
-                document.getElementById('Cards').appendChild(newDiv);
-
-                var newDiv = document.createElement("div");
-                newDiv.setAttribute("class", "uk-card-body");
-                newDiv.id = (i + 100)
-                document.getElementById(i).appendChild(newDiv);
-
-                //Create Image
-                var createImage = document.createElement("img");
-                createImage.setAttribute("src", arrItems[i]['urlImage'])
-                var appender = document.getElementById(i+100);
-                appender.append(createImage);
-
-                //Create Title
-                var createTitle = document.createElement("h1");
-                createTitle.setAttribute("class", "uk-text-emphasis");
-                var tContent = document.createTextNode( arrItems[i]['title']);
-                createTitle.appendChild(tContent);
-                var appender = document.getElementById(i+100);
-                appender.append(createTitle);
-
-                //Create Link to Flickr
-                var createLink = document.createElement("a");
-                createLink.setAttribute("href", arrItems[i]['urlLink'] );
-                createLink.setAttribute("class", "uk-link-text");
-                var lContent = document.createTextNode( "Link to Flickr" );
-                createLink.appendChild(lContent);
-                var appender = document.getElementById(i+100);
-                appender.append(createLink);
-
-                //Create Description
-                var createDesc = document.createElement("p");
-                createDesc.setAttribute("class", "uk-text-emphasis");
-                var descContent = document.createTextNode(arrItems[i]['desc']);
-                createDesc.appendChild(descContent);
-                var appender = document.getElementById(i+100);
-                appender.append(createDesc);
-            }
-
-        }
-
-    });
-
-}
-</script>
 </body>
 </html>
