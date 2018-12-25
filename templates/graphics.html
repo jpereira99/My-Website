@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/uikit.min.css') }}" />
     <script src="{{ url_for('static', filename='js/uikit.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/uikit-icons.min.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -27,86 +28,34 @@
 
     <!-- BODY -->
     <div id="Header">
-        <h1 align="center" class="uk-heading-primary uk-padding uk-padding-remove-bottom"><b>Graphics</b></h1>
+        <h1 align="center" class="uk-heading-primary uk-padding"><b>Graphic Design</b></h1>
     </div>
 
-
-    <div id="Cards" class="uk-child-width-1-3@s uk-grid-small uk-grid-match uk-grid" uk-grid>
-
-        <div class="uk-card uk-card-hover uk-card-hover uk-padding">
-            <div class="uk-card-media-top">
-                <img src="{{ url_for('static', filename='images/graphics/logo.png') }}" alt="">
-            </div>
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">Personal Logo</h3>
-                <p>Designed for simplicity and versatility. The modern stroke design is an asymmetrical assimilation of my initials - and can be given a color overlay or new background color depending on the use case. However, graphite black with a white background is the de facto color scheme. </p>
+    <div id="Cards" class="uk-child-width-1-3@m uk-grid-small uk-grid-match uk-padding uk-padding-remove-top" uk-grid>
+        <div id="logo" class="uk-card uk-card-hover uk-card-body">
+            <div align="center" class="uk-padding">
+                <img src="{{ url_for('static', filename='images/Logo.jpg') }}">
+                <h1 align="center" class="uk-heading-primary">Logos</h1>
+                <a class="uk-button uk-button-secondary uk-button-large" href="graphics/logos">explore the album</a>
             </div>
         </div>
-
-        <div class="uk-card uk-card-hover uk-card-hover uk-padding">
-            <div class="uk-card-media-top">
-                <img src="{{ url_for('static', filename='images/graphics/chem.png') }}" alt="">
-            </div>
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">Kingsway Regional High School Chemistry Club Logo</h3>
-                <p>Designed as a marketing piece to attract new members. This logo is clean, interesting, and can be altered depending on the holiday or theme.</p>
+        <div id="graphics" class="uk-card uk-card-hover uk-card-body">
+            <div align="center" class="uk-padding">
+                <img src="{{ url_for('static', filename='images/graphiccap.png') }}">
+                <h1 align="center" class="uk-heading-primary">Soccer Kits</h1>
+                <a class="uk-button uk-button-secondary uk-button-large" href="graphics/kits">explore the album</a>
             </div>
         </div>
-
-        <div class="uk-card uk-card-hover uk-card-hover uk-padding">
-            <div class="uk-card-media-top">
-                <img src="{{ url_for('static', filename='images/graphiccap.png') }}" alt="">
-            </div>
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">DC United Home Kit</h3>
-                <p>DC United home kit, capturing the essence of prior home kits, now adding some flair. <i class="uk-text-muted">Part of the MLS kit series (more coming soon)</i></p>
-            </div>
-        </div>
-
-        <div class="uk-card uk-card-hover uk-card-hover uk-padding">
-            <div class="uk-card-media-top">
-                <img src="{{ url_for('static', filename='images/graphics/houH.png') }}" alt="">
-            </div>
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">Houston Dynamo Home Kit</h3>
-                <p>Houston Dynamo home kit, white sun beams contrast the classic bright orange kit. <i class="uk-text-muted">Part of the MLS kit series (more coming soon)</i></p>
-            </div>
-        </div>
-
-        <div class="uk-card uk-card-hover uk-card-hover uk-padding">
-            <div class="uk-card-media-top">
-                <img src="{{ url_for('static', filename='images/graphics/houA.png') }}" alt="">
-            </div>
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">Houston Dynamo Away Kit</h3>
-                <p>Houston Dynamo away kit, monochromatic badge with sunbeams makes this sleek kit pop. <i class="uk-text-muted">Part of the MLS kit series (more coming soon)</i></p>
-            </div>
-        </div>
-
-        <div class="uk-card uk-card-hover uk-card-hover uk-padding">
-            <div class="uk-card-media-top">
-                <img src="{{ url_for('static', filename='images/graphics/montA.png') }}" alt="">
-            </div>
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">Montreal Impact Away Kit</h3>
-                <p>Montreal Impact away kit, clean and simple with fleurs de lis patterned throughout the front. <i class="uk-text-muted">Part of the MLS kit series (more coming soon)</i></p>
-            </div>
-        </div>
-
-        <div class="uk-card uk-card-hover uk-card-hover uk-padding">
-            <div class="uk-card-media-top">
-                <img src="{{ url_for('static', filename='images/graphics/risk.png') }}" alt="">
-            </div>
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">RisK Gaming</h3>
-                <p>Commissioned to create a modern and effective logo for a gaming group. The logo changes color depending on what game is being played.</p>
+        <div id="misc" class="uk-card uk-card-hover uk-card-body">
+            <div align="center" class="uk-padding">
+                <img src="{{ url_for('static', filename='images/ggif.gif') }}">
+                <h1 align="center" class="uk-heading-primary">Miscellaneous</h1>
+                <a class="uk-button uk-button-secondary uk-button-large" href="graphics/misc">explore the album</a>
             </div>
         </div>
     </div>
-
 
     <div id="Return" align="center" class="uk-padding"><a class="uk-button uk-button-secondary uk-button-large" href="/dashboard/">experience a different medium</a></div>
-
 
     <!-- contact card -->
     <div class="uk-card uk-card-secondary uk-card-body uk-width-expand uk-text-center">
@@ -118,6 +67,75 @@
         </p>
     </div>
 
+<script>
+//document.body.onload = addElements;
 
+function addElements () {
+
+    //Get json data from server
+    $.ajax({
+        dataType: "json",
+        url: "http://127.0.0.1:5000/static/graphicsData.json",
+        cache: false,  //do not cache
+        success: function(data){
+
+            var arrItems = [];
+            $.each(data, function (index, value) {
+                arrItems.push(value);
+            });
+
+            //loop for objects in array
+            for (var i = 0; i < arrItems.length ; i++) {
+
+                //Create Div
+                var newDiv = document.createElement("div");
+                newDiv.setAttribute("class", "uk-card uk-card-hover uk-flex uk-flex-center uk-flex-middle uk-inline uk-padding");
+                newDiv.setAttribute("align", "center");
+                newDiv.id = i
+                document.getElementById('Cards').appendChild(newDiv);
+
+                var newDiv = document.createElement("div");
+                newDiv.setAttribute("class", "uk-card-body");
+                newDiv.id = (i + 100)
+                document.getElementById(i).appendChild(newDiv);
+
+                //Create Image
+                var createImage = document.createElement("img");
+                createImage.setAttribute("src", arrItems[i]['urlImage'])
+                var appender = document.getElementById(i+100);
+                appender.append(createImage);
+
+                //Create Title
+                var createTitle = document.createElement("h1");
+                createTitle.setAttribute("class", "uk-text-emphasis");
+                var tContent = document.createTextNode( arrItems[i]['title']);
+                createTitle.appendChild(tContent);
+                var appender = document.getElementById(i+100);
+                appender.append(createTitle);
+
+                //Create Link to Flickr
+                var createLink = document.createElement("a");
+                createLink.setAttribute("href", arrItems[i]['urlLink'] );
+                createLink.setAttribute("class", "uk-link-text");
+                var lContent = document.createTextNode( "Link to Flickr" );
+                createLink.appendChild(lContent);
+                var appender = document.getElementById(i+100);
+                appender.append(createLink);
+
+                //Create Description
+                var createDesc = document.createElement("p");
+                createDesc.setAttribute("class", "uk-text-emphasis");
+                var descContent = document.createTextNode(arrItems[i]['desc']);
+                createDesc.appendChild(descContent);
+                var appender = document.getElementById(i+100);
+                appender.append(createDesc);
+            }
+
+        }
+
+    });
+
+}
+</script>
 </body>
 </html>

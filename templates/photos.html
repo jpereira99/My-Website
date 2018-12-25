@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/uikit.min.css') }}" />
     <script src="{{ url_for('static', filename='js/uikit.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/uikit-icons.min.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -27,60 +28,11 @@
 
     <!-- BODY -->
     <div id="Header">
-        <h1 align="center" class="uk-heading-primary uk-padding uk-padding-remove-bottom"><b>Photography</b></h1>
+        <h1 align="center" class="uk-heading-primary uk-padding"><b>Photography</b></h1>
     </div>
 
     <div id="Cards" class="uk-child-width-1-3@s uk-grid-small uk-grid-match uk-grid" uk-grid>
 
-        <div class="uk-card uk-card-hover uk-card-hover uk-padding">
-            <div class="uk-card-media-top">
-                <img src="{{ url_for('static', filename='images/photos/p3.png') }}" alt="">
-            </div>
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">Portugal, 2016</h3>
-                <p>Shot on Panasonic G7</p>
-            </div>
-        </div>
-
-        <div class="uk-card uk-card-hover uk-card-hover uk-padding">
-            <div class="uk-card-media-top">
-                <img src="{{ url_for('static', filename='images/photos/p1.png') }}" alt="">
-            </div>
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">Portugal, 2016</h3>
-                <p>Shot on Panasonic G7</p>
-            </div>
-        </div>
-
-        <div class="uk-card uk-card-hover uk-card-hover uk-padding">
-            <div class="uk-card-media-top">
-                <img src="{{ url_for('static', filename='images/photos/p2.png') }}" alt="">
-            </div>
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">Portugal, 2016</h3>
-                <p>Shot on Panasonic G7</p>
-            </div>
-        </div>
-
-        <div class="uk-card uk-card-hover uk-card-hover uk-padding">
-            <div class="uk-card-media-top">
-                <img src="{{ url_for('static', filename='images/photos/skyline1.png') }}" alt="">
-            </div>
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">Hoboken, 2018</h3>
-                <p>Shot on IPhone X</p>
-            </div>
-        </div>
-
-        <div class="uk-card uk-card-hover uk-card-hover uk-padding">
-            <div class="uk-card-media-top">
-                <img src="{{ url_for('static', filename='images/photos/giraffe.png') }}" alt="">
-            </div>
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">Walt Disney World, 2018</h3>
-                <p>Shot on IPhone X</i></p>
-            </div>
-        </div>
     </div>
 
     <div id="Return" align="center" class="uk-padding"><a class="uk-button uk-button-secondary uk-button-large" href="/dashboard/">experience a different medium</a></div>
@@ -95,6 +47,76 @@
         </p>
     </div>
 
+<script>
+document.body.onload = addElements;
+
+function addElements () {
+
+    //Get json data from server
+    $.ajax({
+        dataType: "json",
+        url: "http://jaydenpereira.com/static/photoData.json",
+        cache: false,  //do not cache
+        success: function(data){
+
+            var arrItems = [];
+            $.each(data, function (index, value) {
+                arrItems.push(value);
+            });
+
+            //loop for objects in array
+            for (var i = 0; i < arrItems.length ; i++) {
+
+                //Create Div
+                var newDiv = document.createElement("div");
+                newDiv.setAttribute("class", "uk-card uk-card-hover uk-flex uk-flex-center uk-flex-middle uk-inline uk-padding");
+                newDiv.setAttribute("align", "center");
+                newDiv.id = i
+                document.getElementById('Cards').appendChild(newDiv);
+
+                var newDiv = document.createElement("div");
+                newDiv.setAttribute("class", "uk-card-body");
+                newDiv.id = (i + 100)
+                document.getElementById(i).appendChild(newDiv);
+
+                //Create Image
+                var createImage = document.createElement("img");
+                createImage.setAttribute("src", arrItems[i]['urlImage'])
+                var appender = document.getElementById(i+100);
+                appender.append(createImage);
+
+                //Create Title
+                var createTitle = document.createElement("h1");
+                createTitle.setAttribute("class", "uk-text-emphasis");
+                var tContent = document.createTextNode( arrItems[i]['title']);
+                createTitle.appendChild(tContent);
+                var appender = document.getElementById(i+100);
+                appender.append(createTitle);
+
+                //Create Description
+                var createDesc = document.createElement("p");
+                createDesc.setAttribute("class", "uk-padding-small");
+                var descContent = document.createTextNode(arrItems[i]['desc']);
+                createDesc.appendChild(descContent);
+                var appender = document.getElementById(i+100);
+                appender.append(createDesc);
+
+                //Create Link to Flickr
+                var createLink = document.createElement("a");
+                createLink.setAttribute("href", arrItems[i]['urlLink'] );
+                createLink.setAttribute("class", "uk-button uk-button-secondary");
+                var lContent = document.createTextNode( "Link to Flickr" );
+                createLink.appendChild(lContent);
+                var appender = document.getElementById(i+100);
+                appender.append(createLink);
+            }
+
+        }
+
+    });
+
+}
+</script>
 
 </body>
 </html>
