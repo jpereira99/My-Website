@@ -18,6 +18,7 @@ def about():
 def dashboard():
     return render_template("dashboard.html")
 
+
 ##individual dashboards
 
 #software
@@ -30,13 +31,25 @@ def dashboardSoftware():
 @app.route("/dashboard/graphics")
 def dashboardGraphics():
     return render_template("graphics.html")
+#graphics - logos
+@app.route("/dashboard/graphics/logos")
+def graphicLogo():
+    return render_template("graphicsL.html")
+#graphics - soccer kits
+@app.route("/dashboard/graphics/kits")
+def graphicKits():
+    return render_template("graphicsK.html")
+#graphics - misc
+@app.route("/dashboard/graphics/misc")
+def graphicMisc():
+    return render_template("graphicsM.html")
 
 #photos
 @app.route("/dashboard/photos")
 def dashboardPhotos():
     return render_template("photos.html")
 
-##webhook POST url
+##GitHub webhook POST url
 @app.route("/webhookpayload/", methods=['POST'])
 def webhook():
     req_data = request.get_json()
@@ -47,6 +60,60 @@ def webhook():
     time = req_data['repository']['updated_at']
 
     backend.jsonAppender(name, url, desc, time)
+
+    return '''Successfully submitted into database'''
+
+##Flickr photo webhook POST url
+@app.route("/webhookpayload/photo", methods=['POST'])
+def webhook2():
+    req_data = request.get_json()
+
+    name = req_data['title']
+    urlId = req_data['id']
+    image = req_data['url_o']
+    desc = req_data['description']['_content']
+
+    backend.flickrPhotoAppender(name, urlId, image, desc)
+
+    return '''Successfully submitted into database'''
+
+##Flickr graphicL webhook POST url
+@app.route("/webhookpayload/graphicsL", methods=['POST'])
+def webhook3():
+    req_data = request.get_json()
+
+    name = req_data['title']
+    urlId = req_data['id']
+    image = req_data['url_o']
+    desc = req_data['description']['_content']
+
+    backend.flickrGraphicLAppender(name, urlId, image, desc)
+
+    return '''Successfully submitted into database'''
+##Flickr graphicK webhook POST url
+@app.route("/webhookpayload/graphicsK", methods=['POST'])
+def webhook4():
+    req_data = request.get_json()
+
+    name = req_data['title']
+    urlId = req_data['id']
+    image = req_data['url_o']
+    desc = req_data['description']['_content']
+
+    backend.flickrGraphicKAppender(name, urlId, image, desc)
+
+    return '''Successfully submitted into database'''
+##Flickr graphicM webhook POST url
+@app.route("/webhookpayload/graphicsM", methods=['POST'])
+def webhook5():
+    req_data = request.get_json()
+
+    name = req_data['title']
+    urlId = req_data['id']
+    image = req_data['url_o']
+    desc = req_data['description']['_content']
+
+    backend.flickrGraphicMAppender(name, urlId, image, desc)
 
     return '''Successfully submitted into database'''
 
