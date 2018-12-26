@@ -97,7 +97,7 @@ def webhook4():
 
     name = req_data['title']
     urlId = req_data['id']
-    image = req_data['url_o']
+    image = req_data['url_l']
     desc = req_data['description']['_content']
 
     backend.flickrGraphicKAppender(name, urlId, image, desc)
